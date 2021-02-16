@@ -18,19 +18,25 @@ const Main = () => {
   const api_call = async (e) => {
     e.preventDefault();
     const location = e.target.location.value
+    const API_KEY = 'd0b41efc5b1235812f9f4b27b2123d81'
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=metric`
+
     if (!location) {
       return (
         setError("Please enter the name of the city."),
         setWeather(null)
       )
     }
-    const API_KEY = 'd0b41efc5b1235812f9f4b27b2123d81'
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=metric`
-    const request = axios.get(url)
-    const response = await request
-    setWeather(response.data.main);
-    setCity(response.data.name)
-    setError(null)
+    
+    try {
+      const request = axios.get(url)
+      const response = await request
+      setWeather(response.data.main);
+      setCity(response.data.name)
+      setError(null)
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   return (
