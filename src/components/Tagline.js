@@ -1,7 +1,7 @@
 const Tagline = () => {
   return (
     <div className="tagline">
-      Enter the name of the city
+      Enter the name of location
     </div>
   )
 }

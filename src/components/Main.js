@@ -6,7 +6,6 @@ import Search from './Search'
 import WeatherData from './WeatherData'
 import Context from '../Context'
 import Error from './Error'
-import DateTime from './DateTime'
 import Tagline from './Tagline'
 
 
@@ -23,7 +22,7 @@ const Main = () => {
 
     if (!location) {
       return (
-        setError("Please enter the name of the city."),
+        setError("Please enter the name of the location."),
         setWeather(null)
       )
     }
@@ -43,7 +42,7 @@ const Main = () => {
     <div className="main">
       <Header />
       <Content>
-        <DateTime />
+
         <Tagline />
         <Context.Provider value={{ 
           api_call: api_call,

@@ -1,6 +1,6 @@
 import Wrapper from './components/Wrapper'
 import Main from './components/Main'
-import './App.scss';
+import './stylesheet/App.scss'
 
 function App() {
   return (

@@ -1,0 +1,45 @@
+.weather {
+  &-search {
+    &__form {
+      display: flex;
+      align-items: center;
+    }
+
+    &__input {
+      border: 1px solid gray;
+      border-radius: 3px;
+      padding: 0.5rem;
+    }
+
+    &__button {
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: rgb(136, 70, 70);
+      color: white;
+      border-radius: 3px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($color: rgb(136, 70, 70), $amount: 15%);
+      }
+    }
+  }
+
+  &-data {
+    margin-top: 2rem;
+    
+    &__city {
+      color: rgb(136, 70, 70);
+    }
+
+    &__box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__title {
+      font-weight: bold;
+    }
+  }
+}
